@@ -1,0 +1,61 @@
+<div class="filter-bar">
+  <div>
+    <button mat-flat-button (click)="showOfficialToggle()">
+      {{ showOfficial ? "Prikazi nezvanične vesti" : "Prikazi zvanične vesti" }}
+    </button>
+  </div>
+  <ng-container *ngIf="!showOfficial">
+    <p>Filteri</p>
+    <div>
+      <button
+        class="menu-btn"
+        mat-button
+        (click)="undoFilter()"
+        [ngClass]="{ 'selected-menu': selectedFilter === '' }"
+      >
+        Svi
+      </button>
+      <button
+        class="menu-btn"
+        mat-button
+        *ngFor="let source of sources"
+        [ngClass]="{ 'selected-menu': selectedFilter === source.source }"
+        (click)="filterArticles(source.source)"
+      >
+        <span>
+          {{ source.source }}
+        </span>
+        <img class="menu-image" [src]="source.icon" />
+      </button>
+    </div>
+  </ng-container>
+</div>
+<ng-container *ngIf="!showOfficial">
+  <div class="container">
+    <mat-card class="card" *ngFor="let article of articles">
+      <mat-card-header>
+        <img mat-card-avatar class="header-image" [src]="article.icon" />
+        <mat-card-title>{{ article.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-actions>
+        <span class="spacer"></span>
+        <a mat-button [href]="article.url" target="_blank">Procitaj</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="showOfficial">
+  <div class="container">
+    <mat-card class="card" *ngFor="let article of articlesOfficial">
+      <mat-card-header>
+        <img mat-card-avatar class="header-image" [src]="article.icon" />
+        <mat-card-title>{{ article.title }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="article.img" class="article-image" />
+      <mat-card-actions>
+        <a mat-button [href]="article.url" target="_blank">Procitaj</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</ng-container>

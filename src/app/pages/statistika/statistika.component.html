@@ -1,0 +1,78 @@
+<h3 class="statistics-title">
+  Statistika
+  <span
+    >{{ statistics.time | date : "mediumDate" }}
+    {{ statistics.time | date : "shortTime" }}</span
+  >
+</h3>
+<div class="container">
+  <div class="statistics-wrapper">
+    <h3>Opsti Podaci</h3>
+    <div class="d-row">
+      <div class="d-name">Kontinent</div>
+      <div class="d-value">
+        {{ statistics.continent }}
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">Zemlja</div>
+      <div class="d-value">
+        {{ statistics.country }}
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">Populacija</div>
+      <div class="d-value">
+        {{ statistics.population }}
+      </div>
+    </div>
+
+    <h3>Oboleli</h3>
+    <div class="d-row">
+      <div class="d-name">Novi</div>
+      <div class="d-value">
+        {{ statistics.cases.new }}
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">Aktivni</div>
+      <div class="d-value">
+        {{ statistics.cases.active }}
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">Kriticni</div>
+      <div class="d-value">
+        {{ statistics.cases.critical }}
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">Oporavljeni</div>
+      <div class="d-value">
+        {{ statistics.cases.recovered }}
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">Ukupno</div>
+      <div class="d-value">
+        {{ statistics.cases.total }}
+      </div>
+    </div>
+
+    <h3>Smrtni Slucajevi</h3>
+    <div class="d-row">
+      <div class="d-name">Novi</div>
+      <div class="d-value">
+        {{ statistics.deaths.new }}
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">Ukupno</div>
+      <div class="d-value">
+        {{ statistics.deaths.total }}
+      </div>
+    </div>
+  </div>
+
+  <app-bar-chart class="chart"></app-bar-chart>
+</div>

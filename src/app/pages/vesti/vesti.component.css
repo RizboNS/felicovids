@@ -1,0 +1,28 @@
+.container {
+  width: 900px;
+  margin: auto;
+}
+.card {
+  margin: 1rem;
+}
+.header-image {
+  border-radius: 0;
+}
+.filter-bar {
+  margin-top: 1rem;
+  border: rgb(178, 175, 175) solid 1px;
+  padding: 0.7rem;
+}
+.menu-image {
+  width: 15px;
+}
+.menu-btn {
+  margin-right: 0.5rem;
+  padding: 0 1.5rem;
+}
+.selected-menu {
+  background-color: #7c699e;
+}
+.selected-menu:hover {
+  background-color: #7c699e;
+}

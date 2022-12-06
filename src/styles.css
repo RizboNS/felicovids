@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.spacer {
+  flex: 1 1 auto;
+}
+h3 {
+  width: 100%;
+  margin: 5px auto;
+  border-bottom: #737374 solid 2px;
+  font-weight: 300;
+  font-size: 24px;
+  color: #737374;
+}
