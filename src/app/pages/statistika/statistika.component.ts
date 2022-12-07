@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Statistics } from 'src/app/models/statistics';
-import { CashingServiceService } from 'src/app/services/cashing/cashing-service.service';
+import { CashingService } from 'src/app/services/cashing/cashing.service';
 
 @Component({
   selector: 'app-statistika',
@@ -13,7 +13,7 @@ export class StatistikaComponent implements OnInit {
 
   subStatistics: Subscription = new Subscription();
 
-  constructor(private cashingService: CashingServiceService) {}
+  constructor(private cashingService: CashingService) {}
 
   ngOnInit(): void {
     this.initStatistics();

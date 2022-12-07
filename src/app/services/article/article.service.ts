@@ -9,7 +9,7 @@ import { Response } from 'src/app/models/response';
 @Injectable({
   providedIn: 'root',
 })
-export class ArticleServiceService {
+export class ArticleService {
   constructor(private http: HttpClient) {}
   private _url = 'http://test-api-temp.felicons.com/';
 

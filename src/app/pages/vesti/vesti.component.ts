@@ -3,7 +3,7 @@ import { Subscription, take } from 'rxjs';
 import { Article } from 'src/app/models/article';
 import { ArticleOffical } from 'src/app/models/article-offical';
 import { Source } from 'src/app/models/source';
-import { CashingServiceService } from 'src/app/services/cashing/cashing-service.service';
+import { CashingService } from 'src/app/services/cashing/cashing.service';
 
 @Component({
   selector: 'app-vesti',
@@ -22,7 +22,7 @@ export class VestiComponent implements OnInit, OnDestroy {
   sourcesSub: Subscription = new Subscription();
   articlesOfficialSub: Subscription = new Subscription();
 
-  constructor(private cashingService: CashingServiceService) {}
+  constructor(private cashingService: CashingService) {}
 
   ngOnInit(): void {
     this.initArticles();

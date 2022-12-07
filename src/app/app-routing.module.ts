@@ -6,6 +6,8 @@ import { VestiComponent } from './pages/vesti/vesti.component';
 const routes: Routes = [
   { path: 'vesti', component: VestiComponent },
   { path: 'statistika', component: StatistikaComponent },
+  { path: '', redirectTo: '/vesti', pathMatch: 'full' },
+  { path: '**', component: VestiComponent },
 ];
 
 @NgModule({

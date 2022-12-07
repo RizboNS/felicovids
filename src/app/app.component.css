@@ -1,16 +1,4 @@
-.nav-container {
-  height: 100%;
-}
-.sidenav {
-  padding: 20px;
-}
 .wrapper {
   width: 95%;
-  margin: auto;
-}
-a {
-  margin-left: 1rem;
-}
-a:hover {
-  background-color: #641a84;
+  margin: 100px auto;
 }

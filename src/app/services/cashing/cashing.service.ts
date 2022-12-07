@@ -4,12 +4,12 @@ import { Article } from 'src/app/models/article';
 import { ArticleOffical } from 'src/app/models/article-offical';
 import { Source } from 'src/app/models/source';
 import { Statistics } from 'src/app/models/statistics';
-import { ArticleServiceService } from '../article/article-service.service';
+import { ArticleService } from '../article/article.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CashingServiceService {
+export class CashingService {
   private articles: Article[] = [];
   private sources: Source[] = [];
   private articlesOfficial: ArticleOffical[] = [];
@@ -27,7 +27,7 @@ export class CashingServiceService {
   private _statistics$ = new BehaviorSubject(this.statistics);
   statistics$ = this._statistics$.asObservable();
 
-  constructor(private articleService: ArticleServiceService) {
+  constructor(private articleService: ArticleService) {
     let articles = localStorage.getItem('articles');
     let sources = localStorage.getItem('sources');
     let articlesOfficial = localStorage.getItem('articlesOfficial');

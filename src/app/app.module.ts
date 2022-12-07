@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { VestiComponent } from './pages/vesti/vesti.component';
 import { StatistikaComponent } from './pages/statistika/statistika.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 // Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -17,7 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
-import { ChartComponent } from './component/bar-chart/chart.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ChartComponent } from './component/bar-chart/chart.component';
     VestiComponent,
     StatistikaComponent,
     ChartComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

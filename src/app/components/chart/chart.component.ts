@@ -1,27 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Statistics } from 'src/app/models/statistics';
-import { CashingServiceService } from 'src/app/services/cashing/cashing-service.service';
+import { CashingService } from 'src/app/services/cashing/cashing.service';
 
 declare var google: any;
 
 @Component({
-  selector: 'app-bar-chart',
+  selector: 'app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css'],
 })
-export class ChartComponent implements OnInit {
+export class ChartComponent {
   statistics!: Statistics;
 
   subStatistics: Subscription = new Subscription();
-
-  constructor(private cashingService: CashingServiceService) {}
+  constructor(private cashingService: CashingService) {}
   ngOnInit(): void {
     this.initStatistics();
     google.charts.load('current', { packages: ['corechart'] });
     this.buildChartInfected(this.statistics);
     this.buildChartDead(this.statistics);
   }
+
   buildChartInfected(statistics: Statistics) {
     var func = (chart: any) => {
       var data = new google.visualization.DataTable();
